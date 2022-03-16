@@ -51,7 +51,7 @@ class App extends Component {
      */
 
     /**
-     * Get your data to look like this
+     * Get your data to look like this from YoloDetection
      * 
      * [
      *    {
@@ -125,7 +125,7 @@ class App extends Component {
     this.setState((state) => ({ yoloData2: arrayYoloDetectionData2 }));
 ///////////////////// end of data entry ////////////////////////////////////
 
-    // TODO: Do later
+    // TODO: fetching data from backend 
     // fetch('/yolo')
     // .then((response) => response.json())
     // .then((data) => {
@@ -153,6 +153,7 @@ class App extends Component {
       imageData1: objUrl
     }));
   }
+
   onInputUploadImage2(event) {
     console.log('changed2');
     console.log(event);
@@ -167,6 +168,7 @@ class App extends Component {
       imageData2: objUrl
     }));
   }
+
   onUploadImage1() {
     console.log('onUploadImage1');
   }
@@ -174,7 +176,8 @@ class App extends Component {
   onUploadImage2() {
     console.log('onUploadImage2');
   }
-
+  
+  // Export data to excel
   export() {
     const yoloData = this.state.yoloData;
     if (yoloData.length == 0) return;
@@ -413,7 +416,6 @@ class App extends Component {
                     <TableBody>
                       <TableCell align='left' colSpan={3}>Number of Shots: {this.state.yoloData.length}</TableCell>
                     </TableBody>
-
                   </Table>
                 </TableContainer>
               </div>
@@ -425,5 +427,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

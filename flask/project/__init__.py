@@ -2,14 +2,12 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_cors import CORS, cross_origin
-# from .user import User
 
 db = SQLAlchemy()
 
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__)
-    # CORS(app, supports_credentials=True)
     CORS(app, resources=r'/*')
 
     app.config['SECRET_KEY'] = '5dbbcc98821c883275aeccf1'
